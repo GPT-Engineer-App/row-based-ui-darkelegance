@@ -42,10 +42,10 @@ const TableRow = ({ item, index, toggleExpand }) => (
   <Tr key={item.id} bg={getRowBg(index)} color="white">
     <ExpandButtonTd item={item} toggleExpand={toggleExpand} />
     <ResultTd result={item.result} />
+    <TextTd>{item.result_reason}</TextTd>
     <TextTd>{item.personal_injury ? "Yes" : "No"}</TextTd>
     <TextTd>{item.case_started ? item.case_started : "not started"}</TextTd>
     <TextTd>{item.situation_begin}</TextTd>
-    <TextTd>{item.result_reason}</TextTd>
     <TextTd>{item.created_at.slice(0, 16)}</TextTd>
     {/* <ChatHistoryTd chatHistory={item.chat_history} openChatHistory={openChatHistory} /> */}
   </Tr>
