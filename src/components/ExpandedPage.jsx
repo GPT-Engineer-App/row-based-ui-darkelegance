@@ -85,7 +85,7 @@ const ExpandedPage = ({ isOpen, onClose, item }) => {
 
   return (
     <Slide direction="right" in={isOpen} style={{ zIndex: 10, width: "75%", position: "fixed", right: "0" }}>
-      <Box p="40px" pt="60px" color="white" mt="4" bg="gray.800" rounded="md" shadow="md" width="75%" height="100vh" position="fixed" top="0" right="0" overflowY="auto">
+      <Box p="40px" pt="60px" color="white" mt="4" bg="gray.800" rounded="md" shadow="md" width="100%" height="100vh" position="fixed" top="0" right="0" overflowY="auto">
         <CloseButton onClose={onClose} />
         {fields.map((field) => (
           <FieldRow key={field.headline} field={field} firstColHeight={firstColHeight} />
