@@ -63,12 +63,8 @@ const Index = () => {
   const [selectedItem, setSelectedItem] = useState(null);
 
   const toggleExpand = (item) => {
-    if (selectedItem && selectedItem.id === item.id) {
-      setIsExpanded(!isExpanded);
-    } else {
-      setSelectedItem(item);
-      setIsExpanded(true);
-    }
+    setSelectedItem(item);
+    setIsExpanded(true);
   };
 
   const openChatHistory = (chatHistory) => {
@@ -134,7 +130,7 @@ const Index = () => {
           </Tbody>
         </Table>
       </TableContainer>
-      <ExpandedPage isOpen={isExpanded} onClose={toggleExpand} item={selectedItem} />
+      <ExpandedPage isOpen={isExpanded} onClose={() => setIsExpanded(false)} item={selectedItem} />
       {/* <ChatHistoryModal isOpen={isChatHistoryOpen} onClose={() => setIsChatHistoryOpen(false)} chatHistory={selectedChatHistory} /> */}
     </Box>
   );
