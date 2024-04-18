@@ -3,7 +3,15 @@ import { Slide, Box, Button } from "@chakra-ui/react";
 import { FaTimes } from "react-icons/fa";
 
 const CloseButton = ({ onClose }) => (
-  <Button onClick={onClose} variant="unstyled" color="white" _hover={{ color: "gray.300" }} position="absolute" top="20px" right="20px">
+  <Button
+    onClick={onClose}
+    variant="unstyled"
+    color="white"
+    _hover={{ color: "gray.300" }}
+    position="absolute"
+    top="20px"
+    right="20px"
+  >
     <FaTimes />
   </Button>
 );
@@ -85,7 +93,7 @@ const ExpandedPage = ({ isOpen, onClose, item }) => {
 
   return (
     <Slide direction="right" in={isOpen} style={{ zIndex: 10 }}>
-      <Box p="40px" pt="60px" color="white" mt="4" bg="gray.800" rounded="md" shadow="md" width="calc(100% - 75px)" height="100vh" position="fixed" top="0" right="0" overflowY="auto">
+      <Box p="40px" pt="60px" color="white" mt="4" bg="gray.800" rounded="md" shadow="md" width="75%" height="100vh" position="fixed" top="0" right="0" overflowY="auto">
         <CloseButton onClose={onClose} />
         {fields.map((field) => (
           <FieldRow key={field.headline} field={field} firstColHeight={firstColHeight} />
