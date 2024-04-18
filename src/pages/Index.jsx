@@ -63,12 +63,8 @@ const Index = () => {
   const [selectedItem, setSelectedItem] = useState(null);
 
   const toggleExpand = (item) => {
-    if (selectedItem && item.id === selectedItem.id) {
-      setIsExpanded(!isExpanded);
-    } else {
-      setSelectedItem(item);
-      setIsExpanded(true);
-    }
+    setSelectedItem(item);
+    setIsExpanded(!isExpanded);
   };
 
   const openChatHistory = (chatHistory) => {
@@ -77,10 +73,10 @@ const Index = () => {
   };
 
   const fetchChatbotResults = async () => {
-    const { data, error } = await supabase.from("chatbot_results").select("*");
+    const { data, error } = await supabase.from('chatbot_results').select("*");
 
     if (error) {
-      console.error("Error fetching chatbot results:", error);
+      console.error('Error fetching chatbot results:', error);
     } else {
       const formattedData = data.map((item) => ({
         id: item.uuid,
@@ -128,7 +124,7 @@ const Index = () => {
                 item={item}
                 index={index}
                 toggleExpand={() => toggleExpand(item)}
-                // openChatHistory={openChatHistory}
+              // openChatHistory={openChatHistory}
               />
             ))}
           </Tbody>
@@ -136,7 +132,7 @@ const Index = () => {
       </TableContainer>
       <ExpandedPage isOpen={isExpanded} onClose={toggleExpand} item={selectedItem} />
       {/* <ChatHistoryModal isOpen={isChatHistoryOpen} onClose={() => setIsChatHistoryOpen(false)} chatHistory={selectedChatHistory} /> */}
-    </Box>
+    </Box >
   );
 };
 
