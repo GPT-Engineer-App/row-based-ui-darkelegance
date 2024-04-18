@@ -9,7 +9,7 @@ const HeaderTh = ({ children }) => (
   </Th>
 );
 
-const headers = [{ label: "Result" }, { label: "Personal Injury" }, { label: "Case Started" }, { label: "Situation Begin" }, { label: "Created At" }];
+const headers = [{ label: "Result" }, { label: "Reason" }, { label: "Personal Injury" }, { label: "Case Started" }, { label: "Situation Begin" }, { label: "Created At" }];
 // const headers = [{ label: "Result" }, { label: "Personal Injury" }, { label: "Case Started" }, { label: "Situation Begin" }, { label: "Created At" }, { label: "Chat History" }];
 
 const TableHeader = () => (
